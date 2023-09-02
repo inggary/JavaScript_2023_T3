@@ -2,20 +2,23 @@
 import { Router } from "express";
 
 import { 
-    get_users, 
+    get_cliente, 
     delete_cliente, 
     get_404,  
     post_cliente,
-    put_cliente
+    put_cliente,
+    get_clientes
 } from "../functions/functions_routes.js";
 
 export const adminRouter = Router()
 
-adminRouter.get("/:id", get_users)
+adminRouter.get("/", get_clientes)
+
+adminRouter.get("/:id", get_cliente)
 
 adminRouter.post("/", post_cliente)
 
-adminRouter.delete("/", delete_cliente)
+adminRouter.delete("/:id", delete_cliente)
 
 adminRouter.put("/", put_cliente)
 
